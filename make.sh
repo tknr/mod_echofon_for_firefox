@@ -2,6 +2,11 @@
 DIR=$(cd $(dirname $0); pwd)
 cd $DIR
 DATE=`date +%Y_%m_%d` 
-zip -r -9 Echofon.jar Echofon/*
+cd Echofon/
+zip -r -9 Echofon.jar *
+cd ../
 cp Echofon.jar src/chrome/
-zip -r -9 mod_echofon_${DATE}.xpi src/*
+cd src/
+zip -r -9 mod_echofon_${DATE}.xpi *
+cd ../
+mv *.xpi .
