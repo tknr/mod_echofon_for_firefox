@@ -1,0 +1,25 @@
+content  echofon	jar:chrome/Echofon.jar!/content/
+resource echofon	modules/
+
+skin     echofon classic/1.0 jar:chrome/Echofon.jar!/skin/win/   os=WINNT
+skin     echofon classic/1.0 jar:chrome/Echofon.jar!/skin/mac/   os=Darwin
+skin     echofon classic/1.0 jar:chrome/Echofon.jar!/skin/linux/ os=Linux
+
+overlay	 chrome://browser/content/browser.xul                    chrome://echofon/content/overlay.xul
+overlay	 chrome://emusic/content/startup.xul                     chrome://echofon/content/overlay.xul
+overlay  chrome://navigator/content/navigatorOverlay.xul         chrome://echofon/content/overlay.xul
+overlay  chrome://songbird/content/xul/mainScriptsOverlay.xul    chrome://fullhsr/content/browser.xul
+
+style chrome://global/content/customizeToolbar.xul chrome://echofon/content/overlay.css
+
+#
+# For Firefox 4
+#
+interfaces components/nsIEchofon.xpt
+
+component {3c4bfeef-c936-0d98-8fb9-b9b28e4f28ed} components/nsEchofon.js
+contract @echofon.com/echofon;1 {3c4bfeef-c936-0d98-8fb9-b9b28e4f28ed}
+category profile-after-change @echofon.com/echofon;1 @echofon.com/echofon;1
+
+locale echofon en-US jar:chrome/Echofon.jar!/locale/en-US/
+locale echofon ja jar:chrome/Echofon.jar!/locale/ja/
