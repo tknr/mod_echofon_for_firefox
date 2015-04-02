@@ -12,4 +12,4 @@ cp Echofon.jar src/chrome/
 cd src/
 zip -r -9 mod_echofon_${DATE}.xpi *
 cd ../
-mv -v *.xpi .
+mv -v src/*.xpi .
